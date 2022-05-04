@@ -60,3 +60,26 @@ def check_horizontle(board):
     elif board[2] == board[4] == board[6] and board[4] != "-":
         winner = board[2]
         return True
+def check_winner(board):
+    global gameRunning
+    if check_across(board):
+        print_game_board(board)
+        print(f"The winner is {winner}")
+        gameRunning = False
+
+    elif check_row(board):
+        print_game_board(board)
+        print(f"The winner is {winner}!")
+        gameRunning = False
+
+    elif check_horizontle(board):
+        print_game_board(board)
+        print(f"The winner is {winner}!")
+        gameRunning = False
+
+def check_tie(board):
+    global gameRunning
+    if '-' not in board:
+        print_game_board(board)
+        print('It is a tie!')
+        gameRunning = False
