@@ -19,3 +19,11 @@ def print_game_board(board):
     print(board[3], "|", board[4], "|", board[5])
     print("---------")
     print(board[6], "|", board[7], "|", board[8])
+
+#getting the players input
+def playerinput(board):
+    inp = int(input("Select a spot 1-9: "))
+    if board[inp-1] == "-":
+        board[inp-1] = currentPlayer
+    else:
+        print('Try again!')
