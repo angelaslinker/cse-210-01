@@ -27,3 +27,15 @@ def playerinput(board):
         board[inp-1] = currentPlayer
     else:
         print('Try again!')
+#checking for win or tie
+def check_across(board):
+    global winner
+    if board[0] == board[1] == board[2] and board[1] != "-":
+        winner = board[0]
+        return True
+    elif board[3] == board[4] == board[5] and board[3] != "-":
+        winner = board[3]
+        return True
+    elif board[5] == board[6] == board[7] and board[6] != "-":
+        winner = board[5]
+        return True
